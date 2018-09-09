@@ -1,0 +1,268 @@
+{
+  "limits": {
+    "accounts_blacklist": ["non-steemit"]
+  },
+  "upstreams": [
+    {
+      "name": "dpayd",
+      "urls": [
+        [
+          "dpayd",
+          "wss://dpayd.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "dpayd",
+          3
+        ],
+        [
+          "dpayd.login_api",
+          -1
+        ],
+        [
+          "dpayd.network_broadcast_api",
+          -1
+        ],
+        [
+          "dpayd.follow_api",
+          10
+        ],
+        [
+          "dpayd.market_history_api",
+          1
+        ],
+        [
+          "dpayd.database_api",
+          3
+        ],
+        [
+          "dpayd.database_api.get_block",
+          -2
+        ],
+        [
+          "dpayd.database_api.get_block_header",
+          -2
+        ],
+        [
+          "dpayd.database_api.get_content",
+          1
+        ],
+        [
+          "dpayd.database_api.get_state",
+          1
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/trending']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['trending']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/hot']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/welcome']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/promoted']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/created']",
+          10
+        ],
+        [
+          "dpayd.database_api.get_dynamic_global_properties",
+          1
+        ]
+      ],
+      "timeouts": [
+        [
+          "dpayd",
+          3
+        ],
+        [
+          "dpayd.network_broadcast_api",
+          0
+        ]
+      ]
+    },
+    {
+      "name": "overseer",
+      "urls": [
+        [
+          "overseer",
+          "wss://overseer.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "overseer",
+          3
+        ]
+      ],
+      "timeouts": [
+        [
+          "overseer",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "appbase",
+      "urls": [
+        [
+          "appbase",
+          "wss://appbase.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "appbase",
+          3
+        ]
+      ],
+      "timeouts": [
+        [
+          "appbase",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "dpds",
+      "urls": [
+        [
+          "dpds",
+          "wss://dpds.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "dpds",
+          3
+        ]
+      ],
+      "timeouts": [
+        [
+          "dpds",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "hivemind",
+      "urls": [
+        [
+          "hivemind",
+          "wss://hivemind.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "hivemind",
+          3
+        ]
+      ],
+      "timeouts": [
+        [
+          "hivemind",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "yo",
+      "urls": [
+        {
+          "prefix": "yo",
+          "upstream_url": "wss://yo.dpays.io"
+        }
+      ],
+      "ttls": [
+        {
+          "prefix": "yo",
+          "upstream_ttl": 3
+        }
+      ],
+      "timeouts": [
+        {
+          "prefix": "yo",
+          "upstream_timeout": 3
+        }
+      ]
+    },
+    {
+      "name": "namespace",
+      "urls": [
+        [
+          "namespace",
+          "wss://namespace.dpays.io"
+        ],
+        [
+          "namespace.method",
+          "wss://namespace.method.dpays.io"
+        ],
+        [
+          "namespace.method.params=[666]",
+          "wss://namespace.method.params666.dpays.io"
+        ],
+        [
+          "namespace.api.method",
+          "wss://namespace.api.method.dpays.io"
+        ],
+        [
+          "namespace.api.method.params=[666]",
+          "wss://namespace.api.method.params666.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "namespace",
+          3
+        ],
+        [
+          "namespace.method",
+          4
+        ],
+        [
+          "namespace.api.method",
+          5
+        ],
+        [
+          "namespace.api.method.params=[666]",
+          6
+        ]
+      ],
+      "timeouts": [
+        [
+          "namespace",
+          3
+        ],
+        [
+          "namespace.method",
+          4
+        ],
+        [
+          "namespace.api.method",
+          5
+        ],
+        [
+          "namespace.api.method.params=[666]",
+          6
+        ]
+      ],
+      "retries": [
+        [
+          "namespace",
+          3
+        ]
+      ]
+    }
+  ]
+}

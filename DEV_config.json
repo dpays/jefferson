@@ -1,0 +1,152 @@
+{
+  "limits": {
+    "blacklist_accounts": [
+      "non-dsite"
+    ]
+  },
+  "upstreams": [
+    {
+      "name": "dpayd",
+      "translate_to_appbase": true,
+      "urls": [
+        [
+          "dpayd",
+         "wss://dpayd.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "dpayd",
+          3
+        ],
+        [
+          "dpayd.login_api",
+          -1
+        ],
+        [
+          "dpayd.network_broadcast_api",
+          -1
+        ],
+        [
+          "dpayd.follow_api",
+          10
+        ],
+        [
+          "dpayd.market_history_api",
+          1
+        ],
+        [
+          "dpayd.database_api",
+          3
+        ],
+        [
+          "dpayd.database_api.get_block",
+          -2
+        ],
+        [
+          "dpayd.database_api.get_block_header",
+          -2
+        ],
+        [
+          "dpayd.database_api.get_content",
+          1
+        ],
+        [
+          "dpayd.database_api.get_state",
+          1
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/trending']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['trending']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/hot']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/welcome']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/promoted']",
+          30
+        ],
+        [
+          "dpayd.database_api.get_state.params=['/created']",
+          10
+        ],
+        [
+          "dpayd.database_api.get_dynamic_global_properties",
+          1
+        ]
+      ],
+      "timeouts": [
+        [
+          "dpayd",
+          5
+        ],
+        [
+          "dpayd.network_broadcast_api",
+          0
+        ]
+      ]
+    },
+    {
+      "name": "appbase",
+      "urls": [
+        [
+          "appbase",
+          "wss://d.dpays.io"
+        ]
+      ],
+      "ttls": [
+        [
+          "appbase",
+          -2
+        ],
+        [
+          "appbase.block_api",
+          -2
+        ],
+        [
+          "appbase.database_api",
+          1
+        ]
+      ],
+      "timeouts": [
+        [
+          "appbase",
+          3
+        ],
+        [
+          "appbase.chain_api.push_block",
+          0
+        ],
+        [
+          "appbase.chain_api.push_transaction",
+          0
+        ],
+        [
+          "appbase.network_broadcast_api",
+          0
+        ],
+        [
+          "appbase.condenser_api.broadcast_block",
+          0
+        ],
+        [
+          "appbase.condenser_api.broadcast_transaction",
+          0
+        ],
+        [
+          "appbase.condenser_api.broadcast_transaction_synchronous",
+          0
+        ]
+      ]
+    }
+  ]
+}

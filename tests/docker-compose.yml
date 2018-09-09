@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  jefferson:
+    image: distributedweb/dpayserver
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../.env
+    environment:
+      JEFFERSON_REDIS_HOST: redis
+      JEFFERSON_REDIS_PORT: 6379
+    links:
+      - redis
+  redis:
+    image: "redis:3.2"
+    ports:
+      - "6379:6379"
