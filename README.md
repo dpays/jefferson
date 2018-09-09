@@ -1,4 +1,5 @@
-# dPay API Server (JSON-RPC)
+# Jefferson
+## dPay API Server (JSON-RPC)
 
 A reverse proxy that only speaks json-rpc 2.0. Upstream routing is done using json-rpc method "namespaces".
 
@@ -31,7 +32,7 @@ Content-Type: application/json
 }
 ```
 
-## What jefferson does
+## What Jefferson does
 ### At Startup
 1. parse the upstream config and build the routing, caching, timeout data structures
 1. open websocket and/or http connections to upstreams
