@@ -102,8 +102,8 @@ def jrpc_response_schema():
 
 
 @pytest.fixture
-def steemd_response_schema():
-    with open(os.path.join(SCHEMA_DIR, 'steemd-response-schema.json')) as f:
+def dpayd_response_schema():
+    with open(os.path.join(SCHEMA_DIR, 'dpayd-response-schema.json')) as f:
         return ujson.load(f)
 
 
@@ -115,16 +115,16 @@ with open(os.path.join(CONFIGS_DIR, 'TEST_UPSTREAM_CONFIG.json')) as f:
 # request/response loading fixtures
 # ------------------------
 
-def steemd_requests_and_responses():
-    with open(os.path.join(REQS_AND_RESPS_DIR, 'steemd.json')) as f:
+def dpayd_requests_and_responses():
+    with open(os.path.join(REQS_AND_RESPS_DIR, 'dpayd.json')) as f:
         return ujson.load(f)
 
 
-def batched_steemd_requests_and_responses(chunk_size=15):
+def batched_dpayd_requests_and_responses(chunk_size=15):
     requests = chunks(
-        [req for req, resp in steemd_requests_and_responses()], chunk_size)
+        [req for req, resp in dpayd_requests_and_responses()], chunk_size)
     responses = chunks(
-        [resp for req, resp in steemd_requests_and_responses()], chunk_size)
+        [resp for req, resp in dpayd_requests_and_responses()], chunk_size)
     return list(zip(requests, responses))
 
 
@@ -142,7 +142,7 @@ def batched_appbase_requests_and_responses(chunk_size=15):
 
 
 def combined_requests_and_responses():
-    return steemd_requests_and_responses() + appbase_requests_and_responses()
+    return dpayd_requests_and_responses() + appbase_requests_and_responses()
 
 
 def batch_combined_requests(chunk_size=15):
@@ -154,19 +154,19 @@ def batch_combined_requests(chunk_size=15):
 
 
 @pytest.fixture
-def translatable_steemd_requests_and_responses():
+def translatable_dpayd_requests_and_responses():
     import jussi.urn
     untranslateable = frozenset(['get_liquidity_queue', 'get_miner_queue',
                                  'get_discussions_by_payout'])
-    return [(req, resp) for req, resp in steemd_requests_and_responses()
+    return [(req, resp) for req, resp in dpayd_requests_and_responses()
             if jussi.urn.from_request(req).method not in untranslateable]
 
 
 def batch_translatable_requests_and_responses(chunk_size=15):
     requests = chunks(
-        [req for req, resp in translatable_steemd_requests_and_responses()], chunk_size)
+        [req for req, resp in translatable_dpayd_requests_and_responses()], chunk_size)
     responses = chunks(
-        [resp for req, resp in translatable_steemd_requests_and_responses()], chunk_size)
+        [resp for req, resp in translatable_dpayd_requests_and_responses()], chunk_size)
     return list(zip(requests, responses))
 
 
@@ -175,7 +175,7 @@ def appbase_requests(appbase_requests_and_responses):
     return [p[0] for p in appbase_requests_and_responses]
 
 
-STEEMD_JSON_RPC_CALLS = [
+DPAYD_JSON_RPC_CALLS = [
     {
         'id': 0,
         'jsonrpc': '2.0',
@@ -713,13 +713,13 @@ STEEMD_JSON_RPC_CALLS = [
 
 ]
 
-STEEMD_JSONRPC_CALL_PAIRS = []
-for c in STEEMD_JSON_RPC_CALLS:
+DPAYD_JSONRPC_CALL_PAIRS = []
+for c in DPAYD_JSON_RPC_CALLS:
     if c['method'] == 'call':
         method = c['params'][1]
         new_method = [
-            m for m in STEEMD_JSON_RPC_CALLS if m['method'] == method]
-        STEEMD_JSONRPC_CALL_PAIRS.append((c, new_method[0]))
+            m for m in DPAYD_JSON_RPC_CALLS if m['method'] == method]
+        DPAYD_JSONRPC_CALL_PAIRS.append((c, new_method[0]))
 
 
 LONG_REQUESTS = [
@@ -1125,25 +1125,25 @@ URN_TEST_REQUEST_DICTS = [
         3
     ),
 
-    # -------- STEEMD BARE METHOD ----------------
-    # steemd, bare method, no params
+    # -------- DPAYD BARE METHOD ----------------
+    # dpayd, bare method, no params
     ({
         'id': 5020,
         'jsonrpc': '2.0',
         'method': 'get_dynamic_global_properties'
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_dynamic_global_properties',
         'params': _empty
     },
-        'steemd.database_api.get_dynamic_global_properties',
-        'wss://steemd.steemitdev.com',
+        'dpayd.database_api.get_dynamic_global_properties',
+        'wss://dpayd.steemitdev.com',
         1,
         3
     ),
-    # steemd, bare method, empty params list
+    # dpayd, bare method, empty params list
     ({
         'id': 5021,
         'jsonrpc': '2.0',
@@ -1151,17 +1151,17 @@ URN_TEST_REQUEST_DICTS = [
         'params': []
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_dynamic_global_properties',
         'params': []
     },
-        'steemd.database_api.get_dynamic_global_properties.params=[]',
-        'wss://steemd.steemitdev.com',
+        'dpayd.database_api.get_dynamic_global_properties.params=[]',
+        'wss://dpayd.steemitdev.com',
         1,
         3
     ),
-    # steemd, bare method, params list
+    # dpayd, bare method, params list
     ({
         'id': 5022,
         'jsonrpc': '2.0',
@@ -1169,18 +1169,18 @@ URN_TEST_REQUEST_DICTS = [
         'params': [1]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_block',
         'params': [1]
     },
-        'steemd.database_api.get_block.params=[1]',
-        'wss://steemd.steemitdev.com',
+        'dpayd.database_api.get_block.params=[1]',
+        'wss://dpayd.steemitdev.com',
         -2,
         3
     ),
 
-    # steemd, bare_method, account transfer url
+    # dpayd, bare_method, account transfer url
     ({
         "id": 5023,
         "jsonrpc": "2.0",
@@ -1188,22 +1188,22 @@ URN_TEST_REQUEST_DICTS = [
         "params": ["/@justinw/transfers"]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_state',
         'params': ["/@justinw/transfers"]
     },
-        'steemd.database_api.get_state.params=["\/@justinw\/transfers"]',
+        'dpayd.database_api.get_state.params=["\/@justinw\/transfers"]',
         'account_transfer_url',
         1,
         3
     ),
 
 
-    # -------- STEEMD METHOD=CALL ----------------
+    # -------- DPAYD METHOD=CALL ----------------
 
 
-    # steemd, method=call, empty params list
+    # dpayd, method=call, empty params list
     ({
         'id': 5024,
         'jsonrpc': '2.0',
@@ -1211,17 +1211,17 @@ URN_TEST_REQUEST_DICTS = [
         'params': ['database_api', 'get_account_count', []]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_account_count',
         'params': []
     },
-        'steemd.database_api.get_account_count.params=[]',
-        'wss://steemd.steemitdev.com',
+        'dpayd.database_api.get_account_count.params=[]',
+        'wss://dpayd.steemitdev.com',
         3,
         3
     ),
-    # steemd numeric apis
+    # dpayd numeric apis
     ({
         'id': 5025,
         'jsonrpc': '2.0',
@@ -1229,13 +1229,13 @@ URN_TEST_REQUEST_DICTS = [
         'params': [1, "login", ["", ""]]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'login_api',
         'method': 'login',
         'params': ["", ""]
     },
-        'steemd.login_api.login.params=["",""]',
-        'wss://steemd.steemitdev.com',
+        'dpayd.login_api.login.params=["",""]',
+        'wss://dpayd.steemitdev.com',
         -1,
         3
     ),
@@ -1246,17 +1246,17 @@ URN_TEST_REQUEST_DICTS = [
         'params': [0, "find_accounts", []]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'find_accounts',
         'params': []
     },
-        'steemd.database_api.find_accounts.params=[]',
-        'wss://steemd.steemitdev.com',
+        'dpayd.database_api.find_accounts.params=[]',
+        'wss://dpayd.steemitdev.com',
         3,
         3
     ),
-    # steemd, method=call, account transfer url
+    # dpayd, method=call, account transfer url
     ({
         "id": 5027,
         "jsonrpc": "2.0",
@@ -1264,12 +1264,12 @@ URN_TEST_REQUEST_DICTS = [
         "params": ["database_api", "get_state", [r"/@justinw/transfers"]]
     },
         {
-        'namespace': 'steemd',
+        'namespace': 'dpayd',
         'api': 'database_api',
         'method': 'get_state',
         'params': ["/@justinw/transfers"]
     },
-        'steemd.database_api.get_state.params=["\/@justinw\/transfers"]',
+        'dpayd.database_api.get_state.params=["\/@justinw\/transfers"]',
         'account_transfer_url',
         1,
         3
@@ -1822,8 +1822,8 @@ def jrpc_response_validator(jrpc_response_schema):
 
 
 @pytest.fixture
-def steemd_jrpc_response_validator(steemd_response_schema):
-    return rpartial(jsonschema.validate, steemd_response_schema)
+def dpayd_jrpc_response_validator(dpayd_response_schema):
+    return rpartial(jsonschema.validate, dpayd_response_schema)
 
 
 @pytest.fixture(params=it.chain(tests.data.jsonrpc.invalid.requests,
@@ -1839,15 +1839,15 @@ def combined_request_and_response(request):
     yield copy.deepcopy(request.param[0]), copy.deepcopy(request.param[1])
 
 
-@pytest.fixture(params=STEEMD_JSONRPC_CALL_PAIRS)
-def steemd_method_pairs(request):
+@pytest.fixture(params=DPAYD_JSONRPC_CALL_PAIRS)
+def dpayd_method_pairs(request):
     yield request.param
 
 
 @pytest.fixture(
-    scope='function', params=steemd_requests_and_responses(),
+    scope='function', params=dpayd_requests_and_responses(),
     ids=lambda reqresp: str(URN(*reqresp[0])))
-def steemd_request_and_response(request):
+def dpayd_request_and_response(request):
     yield copy.deepcopy(request.param[0]), copy.deepcopy(request.param[1])
 
 
@@ -1867,8 +1867,8 @@ def appbase_request_and_response_single_and_batch(request):
     yield copy.deepcopy(request.param[0]), copy.deepcopy(request.param[1])
 
 
-@pytest.fixture(params=translatable_steemd_requests_and_responses())
-def translatable_steemd_request_and_response(request):
+@pytest.fixture(params=translatable_dpayd_requests_and_responses())
+def translatable_dpayd_request_and_response(request):
     yield copy.deepcopy(request.param)
 
 
@@ -1913,8 +1913,8 @@ def urn_test_requests(urn_test_request_dict):
 
 
 @pytest.fixture
-def steemd_jussi_request_and_dict(steemd_request_and_response):
-    jsonrpc_request, _ = steemd_request_and_response
+def dpayd_jussi_request_and_dict(dpayd_request_and_response):
+    jsonrpc_request, _ = dpayd_request_and_response
     dummy_request = make_request()
 
     jussi_request = jsonrpc_from_request(dummy_request, 0,

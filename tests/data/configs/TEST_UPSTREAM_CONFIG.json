@@ -4,90 +4,90 @@
   },
   "upstreams": [
     {
-      "name": "steemd",
+      "name": "dpayd",
       "urls": [
         [
-          "steemd",
-          "wss://steemd.steemitdev.com"
+          "dpayd",
+          "wss://dpayd.dpays.io"
         ]
       ],
       "ttls": [
         [
-          "steemd",
+          "dpayd",
           3
         ],
         [
-          "steemd.login_api",
+          "dpayd.login_api",
           -1
         ],
         [
-          "steemd.network_broadcast_api",
+          "dpayd.network_broadcast_api",
           -1
         ],
         [
-          "steemd.follow_api",
+          "dpayd.follow_api",
           10
         ],
         [
-          "steemd.market_history_api",
+          "dpayd.market_history_api",
           1
         ],
         [
-          "steemd.database_api",
+          "dpayd.database_api",
           3
         ],
         [
-          "steemd.database_api.get_block",
+          "dpayd.database_api.get_block",
           -2
         ],
         [
-          "steemd.database_api.get_block_header",
+          "dpayd.database_api.get_block_header",
           -2
         ],
         [
-          "steemd.database_api.get_content",
+          "dpayd.database_api.get_content",
           1
         ],
         [
-          "steemd.database_api.get_state",
+          "dpayd.database_api.get_state",
           1
         ],
         [
-          "steemd.database_api.get_state.params=['/trending']",
+          "dpayd.database_api.get_state.params=['/trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['trending']",
+          "dpayd.database_api.get_state.params=['trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/hot']",
+          "dpayd.database_api.get_state.params=['/hot']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/welcome']",
+          "dpayd.database_api.get_state.params=['/welcome']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/promoted']",
+          "dpayd.database_api.get_state.params=['/promoted']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/created']",
+          "dpayd.database_api.get_state.params=['/created']",
           10
         ],
         [
-          "steemd.database_api.get_dynamic_global_properties",
+          "dpayd.database_api.get_dynamic_global_properties",
           1
         ]
       ],
       "timeouts": [
         [
-          "steemd",
+          "dpayd",
           3
         ],
         [
-          "steemd.network_broadcast_api",
+          "dpayd.network_broadcast_api",
           0
         ]
       ]
@@ -97,7 +97,7 @@
       "urls": [
         [
           "overseer",
-          "wss://overseer.steemitdev.com"
+          "wss://overseer.dpays.io"
         ]
       ],
       "ttls": [
@@ -118,7 +118,7 @@
       "urls": [
         [
           "appbase",
-          "wss://appbase.steemitdev.com"
+          "wss://appbase.dpays.io"
         ]
       ],
       "ttls": [
@@ -139,7 +139,7 @@
       "urls": [
         [
           "sbds",
-          "wss://sbds.steemitdev.com"
+          "wss://sbds.dpays.io"
         ]
       ],
       "ttls": [
@@ -160,7 +160,7 @@
       "urls": [
         [
           "hivemind",
-          "wss://hivemind.steemitdev.com"
+          "wss://hivemind.dpays.io"
         ]
       ],
       "ttls": [
@@ -181,7 +181,7 @@
       "urls": [
         {
           "prefix": "yo",
-          "upstream_url": "wss://yo.steemitdev.com"
+          "upstream_url": "wss://yo.dpays.io"
         }
       ],
       "ttls": [
@@ -202,23 +202,23 @@
       "urls": [
         [
           "namespace",
-          "wss://namespace.steemitdev.com"
+          "wss://namespace.dpays.io"
         ],
         [
           "namespace.method",
-          "wss://namespace.method.steemitdev.com"
+          "wss://namespace.method.dpays.io"
         ],
         [
           "namespace.method.params=[666]",
-          "wss://namespace.method.params666.steemitdev.com"
+          "wss://namespace.method.params666.dpays.io"
         ],
         [
           "namespace.api.method",
-          "wss://namespace.api.method.steemitdev.com"
+          "wss://namespace.api.method.dpays.io"
         ],
         [
           "namespace.api.method.params=[666]",
-          "wss://namespace.api.method.params666.steemitdev.com"
+          "wss://namespace.api.method.params666.dpays.io"
         ]
       ],
       "ttls": [

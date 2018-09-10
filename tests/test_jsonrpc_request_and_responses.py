@@ -22,11 +22,11 @@ correct_get_block_1000_response = {
     'jsonrpc_request, expected',
     [
         (
-            # single jsonrpc steemd request
+            # single jsonrpc dpayd request
             dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
             correct_get_block_1000_response
         ),
-        # batch jsronrpc steemd request
+        # batch jsronrpc dpayd request
         (
             [
                 dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
@@ -35,7 +35,7 @@ correct_get_block_1000_response = {
             [correct_get_block_1000_response, correct_get_block_1000_response]
         ),
         (
-            # single jsonrpc old-style steemd requests
+            # single jsonrpc old-style dpayd requests
             dict(
                 id=1,
                 jsonrpc='2.0',
@@ -44,7 +44,7 @@ correct_get_block_1000_response = {
             correct_get_block_1000_response
         ),
         (
-            # batch jsonrpc old-style steemd request
+            # batch jsonrpc old-style dpayd request
             [
                 dict(
                     id=1,
@@ -60,7 +60,7 @@ correct_get_block_1000_response = {
             [correct_get_block_1000_response, correct_get_block_1000_response]
         ),
         (
-            # batch jsonrpc mixed-style steemd request
+            # batch jsonrpc mixed-style dpayd request
             [
                 dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
                 dict(id=1, jsonrpc='2.0', method='call', params=[
@@ -69,7 +69,7 @@ correct_get_block_1000_response = {
             [correct_get_block_1000_response, correct_get_block_1000_response]
         )
     ])
-async def steemd_multi_format_requests(mocked_app_test_cli, jsonrpc_request, expected, steemd_jrpc_response_validator, mocker):
+async def dpayd_multi_format_requests(mocked_app_test_cli, jsonrpc_request, expected, dpayd_jrpc_response_validator, mocker):
 
     with mocker.patch('jussi.handlers.random',
                       getrandbits=lambda x: 1) as mocked_rand:
@@ -81,13 +81,13 @@ async def steemd_multi_format_requests(mocked_app_test_cli, jsonrpc_request, exp
         assert response.status == 200
         assert response.headers['Content-Type'] == 'application/json'
         json_response = await response.json()
-        assert steemd_jrpc_response_validator(json_response) is None
+        assert dpayd_jrpc_response_validator(json_response) is None
         assert json_response == expected
 
 
-async def test_mocked_steemd_calls(mocked_app_test_cli, steemd_jrpc_response_validator, steemd_request_and_response, mocker):
+async def test_mocked_dpayd_calls(mocked_app_test_cli, dpayd_jrpc_response_validator, dpayd_request_and_response, mocker):
     compare_key_only_ids = (6, 48)
-    jrpc_req, jrpc_resp = steemd_request_and_response
+    jrpc_req, jrpc_resp = dpayd_request_and_response
 
     mocked_ws_conn, test_cli = mocked_app_test_cli
     mocked_ws_conn.recv.return_value = json.dumps(jrpc_resp)
@@ -97,7 +97,7 @@ async def test_mocked_steemd_calls(mocked_app_test_cli, steemd_jrpc_response_val
     assert response.headers['Content-Type'] == 'application/json'
     assert 'x-jussi-cache-hit' not in response.headers
     json_response = await response.json()
-    assert steemd_jrpc_response_validator(json_response) is None
+    assert dpayd_jrpc_response_validator(json_response) is None
     assert 'error' not in json_response
     assert json_response['id'] == jrpc_req['id']
     if jrpc_req['id'] in compare_key_only_ids:

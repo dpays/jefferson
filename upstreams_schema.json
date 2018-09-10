@@ -1,5 +1,5 @@
 {
-  "id": "https://schema.steemit.com/jussi/upstreams/schema.json",
+  "id": "https://schema.dpays.io/jussi/upstreams/schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Jussi upstream configuration file schema",
   "type": "object",

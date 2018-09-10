@@ -2,7 +2,7 @@ SHELL := /bin/bash
 ROOT_DIR := $(shell pwd)
 
 PROJECT_NAME := $(notdir $(ROOT_DIR))
-PROJECT_DOCKER_TAG := steemit/$(PROJECT_NAME)
+PROJECT_DOCKER_TAG := dpay/$(PROJECT_NAME)
 PROJECT_DOCKER_RUN_ARGS := -p8080:8080  -p7777:7777 --env-file .env -v $(shell pwd)/DEV_config.json:/app/DEV_config.json
 
 PIPENV_VENV_IN_PROJECT := 1
@@ -132,9 +132,9 @@ mypy: ## run mypy type checking on python files
 	http --json :9000/ id:=1 jsonrpc=2.0 method=get_block params:='[1000]'
 
 
-.PHONY: test-local-steemd-calls
-test-local-steemd-calls:
-	pipenv run pytest -vv tests/test_responses.py::test_steemd_responses --jussiurl http://localhost:9000
+.PHONY: test-local-dpayd-calls
+test-local-dpayd-calls:
+	pipenv run pytest -vv tests/test_responses.py::test_dpayd_responses --jussiurl http://localhost:9000
 
 .PHONY: test-local-appbase-calls
 test-local-appbase-calls:
@@ -146,15 +146,15 @@ test-local-appbase-translation-calls:
 
 .PHONY: test-live-dev-appbase-calls
 test-live-dev-appbase-calls:
-	pipenv run pytest -vv tests/test_responses.py::test_appbase_responses --jussiurl https://api.steemitdev.com
+	pipenv run pytest -vv tests/test_responses.py::test_appbase_responses --jussiurl https://api.dpays.io
 
 .PHONY: test-live-staging-appbase-calls
 test-live-staging-appbase-calls:
-	pipenv run pytest -vv tests/test_responses.py::test_appbase_responses --jussiurl https://api.steemitstage.com
+	pipenv run pytest -vv tests/test_responses.py::test_appbase_responses --jussiurl https://api.dpays.io
 
 .PHONY: test-live-prod-appbase-calls
 test-live-prod-appbase-calls:
-	pipenv run pytest --maxfail=1 tests/test_responses.py::test_appbase_responses --jussiurl https://api.steemit.com
+	pipenv run pytest --maxfail=1 tests/test_responses.py::test_appbase_responses --jussiurl https://api.dpays.io
 
 
 ./perf:

@@ -1,4 +1,4 @@
-# jussi
+# Jefferson
 
 A reverse proxy that only speaks json-rpc 2.0. Upstream routing is done using json-rpc method "namespaces".
 
@@ -17,7 +17,7 @@ Content-Type: application/json
 ```
 
 ### Default Namespace
-Any json-rpc method with no period in the method name is presumed to be in the "steemd" namespace and will be forwarded to a steemd endpoint:
+Any json-rpc method with no period in the method name is presumed to be in the "dpayd" namespace and will be forwarded to a dpayd endpoint:
 
 ```
 POST / HTTP/1.1
