@@ -6,91 +6,91 @@
   },
   "upstreams": [
     {
-      "name": "steemd",
+      "name": "dpayd",
       "translate_to_appbase": true,
       "urls": [
         [
-          "steemd",
-         "wss://steemd-appbase.steemit.com"
+          "dpayd",
+         "wss://dpayd.dpays.io"
         ]
       ],
       "ttls": [
         [
-          "steemd",
+          "dpayd",
           3
         ],
         [
-          "steemd.login_api",
+          "dpayd.login_api",
           -1
         ],
         [
-          "steemd.network_broadcast_api",
+          "dpayd.network_broadcast_api",
           -1
         ],
         [
-          "steemd.follow_api",
+          "dpayd.follow_api",
           10
         ],
         [
-          "steemd.market_history_api",
+          "dpayd.market_history_api",
           1
         ],
         [
-          "steemd.database_api",
+          "dpayd.database_api",
           3
         ],
         [
-          "steemd.database_api.get_block",
+          "dpayd.database_api.get_block",
           -2
         ],
         [
-          "steemd.database_api.get_block_header",
+          "dpayd.database_api.get_block_header",
           -2
         ],
         [
-          "steemd.database_api.get_content",
+          "dpayd.database_api.get_content",
           1
         ],
         [
-          "steemd.database_api.get_state",
+          "dpayd.database_api.get_state",
           1
         ],
         [
-          "steemd.database_api.get_state.params=['/trending']",
+          "dpayd.database_api.get_state.params=['/trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['trending']",
+          "dpayd.database_api.get_state.params=['trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/hot']",
+          "dpayd.database_api.get_state.params=['/hot']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/welcome']",
+          "dpayd.database_api.get_state.params=['/welcome']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/promoted']",
+          "dpayd.database_api.get_state.params=['/promoted']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/created']",
+          "dpayd.database_api.get_state.params=['/created']",
           10
         ],
         [
-          "steemd.database_api.get_dynamic_global_properties",
+          "dpayd.database_api.get_dynamic_global_properties",
           1
         ]
       ],
       "timeouts": [
         [
-          "steemd",
+          "dpayd",
           5
         ],
         [
-          "steemd.network_broadcast_api",
+          "dpayd.network_broadcast_api",
           0
         ]
       ]
@@ -100,7 +100,7 @@
       "urls": [
         [
           "appbase",
-          "wss://steemd.steemitstage.com"
+          "wss://d.dpays.io"
         ]
       ],
       "ttls": [

@@ -42,10 +42,10 @@ def test_parse_jrpc_errors(jsonrpc_request, expected):
         result = _parse_jrpc(jsonrpc_request)
 
 
-def test_parse_jrpc_namespace_is_steemd(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_parse_jrpc_namespace_is_dpayd(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     result = _parse_jrpc(req)
-    assert result['namespace'] == 'steemd'
+    assert result['namespace'] == 'dpayd'
 
 
 def test_parse_jrpc_namespace_is_appbase(appbase_request_and_response):

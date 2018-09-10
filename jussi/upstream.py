@@ -91,7 +91,7 @@ class _Upstreams(object):
         try:
             if (request_urn.api == 'database_api' or request_urn.api == 'condenser_api') and ACCOUNT_TRANSFER_PATTERN.match(
                     request_urn.params[0]):
-                url = os.environ.get('JUSSI_ACCOUNT_TRANSFER_STEEMD_URL')
+                url = os.environ.get('JUSSI_ACCOUNT_TRANSFER_DPAYD_URL')
                 if url:
                     return url
         except Exception:

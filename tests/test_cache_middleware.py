@@ -7,7 +7,7 @@ import pytest
 
 req = {"id": 1, "jsonrpc": "2.0", "method": "get_dynamic_global_properties"}
 
-expected_steemd_response = {
+expected_dpayd_response = {
     "id": "1",
     "result": {
         "average_block_size": 16112,
@@ -83,9 +83,9 @@ expected_response = {
 @pytest.mark.live
 async def test_cache_response_middleware(test_cli):
     response = await test_cli.post('/', json=req)
-    assert await response.json() == expected_steemd_response
+    assert await response.json() == expected_dpayd_response
     response = await test_cli.post('/', json=req)
-    assert response.headers['x-jussi-cache-hit'] == 'steemd.database_api.get_dynamic_global_properties'
+    assert response.headers['x-jussi-cache-hit'] == 'dpayd.database_api.get_dynamic_global_properties'
 
 
 async def test_mocked_cache_response_middleware(mocked_app_test_cli):
@@ -96,5 +96,5 @@ async def test_mocked_cache_response_middleware(mocked_app_test_cli):
     assert await response.json() == expected_response
 
     response = await test_cli.post('/', json=req, headers={'x-jussi-request-id': '1'})
-    assert response.headers['x-jussi-cache-hit'] == 'steemd.database_api.get_dynamic_global_properties'
+    assert response.headers['x-jussi-cache-hit'] == 'dpayd.database_api.get_dynamic_global_properties'
     assert await response.json() == expected_response

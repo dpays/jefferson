@@ -208,9 +208,9 @@ def test_is_valid_single_jsonrpc_response(value, expected):
     assert is_valid_single_jsonrpc_response(value) is expected
 
 
-def test_is_valid_single_jsonrpc_response_using_steemd(
-        steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_is_valid_single_jsonrpc_response_using_dpayd(
+        dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     assert is_valid_single_jsonrpc_response(resp) is True
 
 
@@ -231,9 +231,9 @@ def test_is_valid_non_error_single_jsonrpc_response(value, expected):
     assert is_valid_non_error_single_jsonrpc_response(value) is expected
 
 
-def test_is_valid_non_error_single_jsonrpc_response_using_steemd(
-        steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_is_valid_non_error_single_jsonrpc_response_using_dpayd(
+        dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     assert is_valid_non_error_single_jsonrpc_response(resp) is True
 
 
@@ -273,8 +273,8 @@ def test_is_valid_jussi_response(req, resp, expected):
     assert is_valid_non_error_jussi_response(req, resp) is expected
 
 
-def test_is_valid_jussi_response_using_steemd(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_is_valid_jussi_response_using_dpayd(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0, req)
     assert is_valid_non_error_jussi_response(req, resp) is True
 
@@ -335,8 +335,8 @@ def test_limit_custom_json_account(ops, expected):
         limit_custom_json_account(ops, blacklist_accounts={'not_steemit'})
 
 
-def test_is_broadcast_transaction_false(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_is_broadcast_transaction_false(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0,
                                req)
     assert is_broadcast_transaction_request(req) is False
@@ -354,8 +354,8 @@ def test_is_broadcast_transaction_true_invalid(invalid_broadcast_transaction):
     assert is_broadcast_transaction_request(req) is True
 
 
-def test_limit_broadcast_transaction_request(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_limit_broadcast_transaction_request(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0, req)
     limit_broadcast_transaction_request(req)
 

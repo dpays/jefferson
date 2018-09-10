@@ -241,7 +241,7 @@ async def test_cache_group_set_many():
 
 
 async def test_cache_group_get_single_jsonrpc_response(
-        steemd_request_and_response):
+        dpayd_request_and_response):
     caches = [
         CacheGroupItem(build_mocked_cache(), True, True, SpeedTier.FAST),
         CacheGroupItem(build_mocked_cache(), True, True, SpeedTier.FAST),
@@ -250,7 +250,7 @@ async def test_cache_group_get_single_jsonrpc_response(
     cache_group = CacheGroup(caches)
 
     cache_group = CacheGroup(caches)
-    req, resp = steemd_request_and_response
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0, req)
     resp['jsonrpc'] = '2.0'
     key = jsonrpc_cache_key(req)
@@ -340,8 +340,8 @@ async def test_cache_group_cache_batch_jsonrpc_responses():
         assert await cache_group.get(key) == batch_resp[i]
 
 
-def test_cache_group_is_complete_response(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_cache_group_is_complete_response(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0, req)
     assert CacheGroup.is_complete_response(req, resp) is True
 
@@ -379,8 +379,8 @@ def test_cache_group_is_complete_response_bad_responses(req, resp, expected):
     assert CacheGroup.is_complete_response(req, resp) is expected
 
 
-def test_cache_group_x_jussi_cache_key(steemd_request_and_response):
-    req, resp = steemd_request_and_response
+def test_cache_group_x_jussi_cache_key(dpayd_request_and_response):
+    req, resp = dpayd_request_and_response
     req = jsonrpc_from_request(dummy_request, 0, req)
     batch_req = [req, req, req]
     assert jsonrpc_cache_key(req) == CacheGroup.x_jussi_cache_key(req)

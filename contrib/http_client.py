@@ -79,8 +79,8 @@ class SimpleSteemAPIClient(object):
                  pool_block=False,
                  tcp_keepalive=True,
                  **kwargs):
-        url = url or os.environ.get('STEEMD_HTTP_URL',
-                                    'https://steemd.steemitdev.com')
+        url = url or os.environ.get('DPAYD_HTTP_URL',
+                                    'https://dpayd.steemitdev.com')
         self.url = url
         self.hostname = urlparse(url).hostname
         self.return_with_args = kwargs.get('return_with_args', False)

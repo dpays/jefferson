@@ -11,7 +11,7 @@ def test_appbase_responses(
     appbase_request_and_response_single_and_batch,
         requests_session,
         jussi_url,
-        steemd_jrpc_response_validator,
+        dpayd_jrpc_response_validator,
         jrpc_request_validator,
         jrpc_response_validator):
 
@@ -40,14 +40,14 @@ def test_appbase_responses(
     response_json = response.json()
     if isinstance(request, dict):
         assert response_json['id'] == request['id']
-        assert steemd_jrpc_response_validator(response_json) is None
+        assert dpayd_jrpc_response_validator(response_json) is None
         assert 'error' not in response_json
         assert 'result' in response_json
         assert jrpc_response_validator(response_json) is None
     else:
         for item, expected in zip(response_json, expected):
             assert item['id'] == expected['id']
-            assert steemd_jrpc_response_validator(item) is None
+            assert dpayd_jrpc_response_validator(item) is None
             assert 'error' not in item
             assert 'result' in item
             assert jrpc_response_validator(item) is None
@@ -86,8 +86,8 @@ def test_response_headers(path, method, requests_session, jussi_url):
 
 @pytest.mark.live
 def test_long_request_live(long_request, requests_session, jussi_url,
-                           steemd_jrpc_response_validator,):
+                           dpayd_jrpc_response_validator,):
     response = requests_session.post(jussi_url, json=long_request)
     response.raise_for_status()
     response_json = response.json()
-    assert steemd_jrpc_response_validator(response_json) is None
+    assert dpayd_jrpc_response_validator(response_json) is None
