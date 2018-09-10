@@ -50,9 +50,9 @@ The default value is 64kB, equal to asyncio's default (based on the
 current implementation of ``_FlowControlMixin``).
 
 '''
-STEEMIT_MAX_BLOCK_SIZE = 65536  # get_dynamic_global_properties['maximum_block_size']
+DPAY_MAX_BLOCK_SIZE = 65536  # get_dynamic_global_properties['maximum_block_size']
 MAX_WEBSOCKET_RECV_SIZE = None  # no limit
-MAX_WEBSOCKET_READ_LIMIT = STEEMIT_MAX_BLOCK_SIZE + 1000
+MAX_WEBSOCKET_READ_LIMIT = DPAY_MAX_BLOCK_SIZE + 1000
 
 
 # pylint: disable=protected-access

@@ -8,4 +8,4 @@ dependencies:
 
 test:
     override:
-        - docker build -t steemit/jussi .
+        - docker build -t dpay/jussi .

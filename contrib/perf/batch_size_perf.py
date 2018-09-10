@@ -64,9 +64,9 @@ if __name__ == '__main__':
         # print(resp)
         for test in range(1, 3):
             batches = list(chunkify(rpc_reqs, batch_size))
-            resp = make_batch_request('https://api.steemitdev.com', batches[0])
+            resp = make_batch_request('https://api.dpays.io', batches[0])
             start = time.perf_counter()
-            resp = make_batch_request('https://api.steemitdev.com', batches[0])
+            resp = make_batch_request('https://api.dpays.io', batches[0])
             end = time.perf_counter()
             results.append((batch_size, start, end, resp.elapsed))
     show_results(results)

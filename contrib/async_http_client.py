@@ -22,32 +22,33 @@ logger = logging.getLogger(__name__)
 
 CORRECT_BATCH_TEST_RESPONSE = [
     {
-        "id": 1, "result": {
-            "previous": "000000b0c668dad57f55172da54899754aeba74b",
-            "timestamp": "2016-03-24T16:14:21",
-            "witness": "initminer",
-            "transaction_merkle_root": "0000000000000000000000000000000000000000",
-            "extensions": [],
-            "witness_signature": "2036fd4ff7838ba32d6d27637576e1b1e82fd2858ac97e6e65b7451275218cbd2b64411b0a5d74edbde790c17ef704b8ce5d9de268cb43783b499284c77f7d9f5e",
-            "transactions": [],
-            "block_id": "000000b13707dfaad7c2452294d4cfa7c2098db4",
-            "signing_key": "STM8GC13uCZbP44HzMLV6zPZGwVQ8Nt4Kji8PapsPiNq1BK153XTX",
-            "transaction_ids": []
+        "id":1,
+        "result":{
+            "previous":"0000000000000000000000000000000000000000",
+            "timestamp":"2018-09-04T16:36:27",
+            "witness":"dpay",
+            "transaction_merkle_root":"0000000000000000000000000000000000000000",
+            "extensions":[],
+            "witness_signature":"201522e89ede4eea643486772bb7cf5fd59224f0de226840124651dcb7a22251d772e1a8a953d7218eddf83618351f33ec401007713070b435253d44a3ad937db2",
+            "transactions":[],
+            "block_id":"000000011b5056ef5b610531031204f173aef7a8",
+            "signing_key":"DWB88FC9nDFczSTfVxrzHvVe8ZuvajLHKikfJYWiKkNvrUebBovzF",
+            "transaction_ids":[]
         }
     },
     {
-        "id": 2, "result": {
-            "previous": "000000b0c668dad57f55172da54899754aeba74b",
-            "timestamp": "2016-03-24T16:14:21",
-            "witness": "initminer",
-            "transaction_merkle_root": "0000000000000000000000000000000000000000",
-            "extensions": [],
-            "witness_signature": "2036fd4ff7838ba32d6d27637576e1b1e82fd2858ac97e6e65b7451275218cbd2b64411b0a5d74edbde790c17ef704b8ce5d9de268cb43783b499284c77f7d9f5e",
-            "transactions": [],
-            "block_id": "000000b13707dfaad7c2452294d4cfa7c2098db4",
-            "signing_key": "STM8GC13uCZbP44HzMLV6zPZGwVQ8Nt4Kji8PapsPiNq1BK153XTX",
-            "transaction_ids": []
-        }
+        "id":2,"result":{
+            "previous":"0000000000000000000000000000000000000000",
+            "timestamp":"2018-09-04T16:36:27",
+            "witness":"dpay",
+            "transaction_merkle_root":"0000000000000000000000000000000000000000",
+            "extensions":[],
+            "witness_signature":"201522e89ede4eea643486772bb7cf5fd59224f0de226840124651dcb7a22251d772e1a8a953d7218eddf83618351f33ec401007713070b435253d44a3ad937db2",
+            "transactions":[],
+            "block_id":"000000011b5056ef5b610531031204f173aef7a8",
+            "signing_key":"DWB88FC9nDFczSTfVxrzHvVe8ZuvajLHKikfJYWiKkNvrUebBovzF",
+            "transaction_ids":[]
+            }
     }
 ]
 
@@ -93,7 +94,7 @@ def chunkify(iterable, chunksize=3000):
 class AsyncClient(object):
     def __init__(self, *, url=None, **kwargs):
         self.url = url or os.environ.get(
-            'DPAYD_HTTP_URL', 'https://dpayd.steemitdev.com')
+            'DPAYD_HTTP_URL', 'https://dpayd.dpays.io')
         self.kwargs = kwargs
         self.session = kwargs.get('session', None)
         self.connector = get_in(kwargs, ['session', 'connector'])
@@ -337,7 +338,7 @@ if __name__ == '__main__':
     subparsers = parser.add_subparsers()
 
     parser.add_argument('--url', type=str,
-                        default='https://api.steemitdev.com')
+                        default='https://api.dpays.io')
     parser.add_argument('--start_block', type=int, default=1)
     parser.add_argument('--end_block', type=int, default=16_000_000)
     parser.add_argument('--batch_request_size', type=int, default=100)

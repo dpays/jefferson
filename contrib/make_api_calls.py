@@ -226,7 +226,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser('jussi jsonrpc utils')
     subparsers = parser.add_subparsers()
     parser.add_argument('--url', type=str,
-                        default='https://api.steemitdev.com')
+                        default='https://api.dpays.io')
     parser.add_argument('--jrpc_calls', type=open_json)
     parser.set_defaults(func=generate_test_requests_and_responses)
 
