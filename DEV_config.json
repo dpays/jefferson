@@ -7,11 +7,11 @@
   "upstreams": [
     {
       "name": "dpayd",
-      "translate_to_appbase": true,
+      "translate_to_appbase": false,
       "urls": [
         [
           "dpayd",
-         "wss://dpayd.dpays.io"
+         "wss://d.dpays.io"
         ]
       ],
       "ttls": [
