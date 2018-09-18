@@ -7,7 +7,7 @@
   "upstreams": [
     {
       "name": "dpayd",
-      "translate_to_appbase": false,
+      "translate_to_appbase": true,
       "urls": [
         [
           "dpayd",
