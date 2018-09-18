@@ -11,7 +11,7 @@
       "urls": [
         [
           "dpayd",
-         "wss://d.dpays.io"
+         "https://dpayd.dpays.io"
         ]
       ],
       "ttls": [
@@ -100,7 +100,7 @@
       "urls": [
         [
           "appbase",
-          "wss://d.dpays.io"
+          "https://d.dpays.io"
         ]
       ],
       "ttls": [
