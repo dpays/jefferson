@@ -292,6 +292,10 @@
           1
         ],
         [
+          "dpayd.follow_api",
+          1
+        ],
+        [
           "dpayd.follow_api.get_account_reputations",
           1
         ],
@@ -822,10 +826,7 @@
           "appbase.condenser_api.get_witness_by_account",
           0
         ],
-        [
-          "appbase.condenser_api.get_witness_count",
-          0
-        ],
+        ["appbase.condenser_api.get_witness_count", 0],
         [
           "appbase.condenser_api.get_witness_schedule",
           0

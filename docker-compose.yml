@@ -12,7 +12,7 @@ services:
       JEFFERSON_STATSD_URL: statsd://statsd:8125
     env_file: .env
     volumes:
-      - /root/jefferson/LIVE_config.json:/app/LIVE_config.json
+      - /root/jefferson/DEV_config.json:/app/DEV_config.json
   redis1:
     restart: "no"
     image: "redis:3.2"
