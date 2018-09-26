@@ -31,6 +31,7 @@ docker-compose up
 
 - dPay Primary API Node - [https://api.dpays.io/](https://api.dpayeurope.com/)
 - dPay Secondary API Node - [https://dpayapi.com/](https://dpayapi.com/)
+- dPayLabs' API Node - [https://api.dpayjs.com](https://api.dpayjs.com)
 - dPay Europe API Node - [https://api.dpayeurope.com/](https://api.dpayeurope.com/)
 - dPay USA API Node - [https://api.dpayusa.com/](https://api.dpayusa.com/)
 - dPayID API Node - [https://api.dpayid.io/](https://api.dpayid.io/)
