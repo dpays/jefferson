@@ -3,6 +3,39 @@
 
 A reverse proxy that only speaks json-rpc 2.0. Upstream routing is done using json-rpc method "namespaces".
 
+## Installation
+
+### Install the latest Docker Compose
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+### Clone Jefferson and Configure
+
+```
+git clone https://github.com/dpays/jefferson.git
+cd jefferson
+```
+- `DEV_config.json` is the main config file, we also use this configuration file in our production environments since we are still in BETA.
+- You will need a server running 0.19.6 for non-appbase RPC calls and a server running 0.20.2 for appbase-based RPC calls.
+- The default configuration is what we use for [dSite](https://dsite.io) and [dSocial](https://dsocial.io). You can use your own nodes or can use the default nodes operated by [dPay Nodes Team](https://dpaynodes.com).
+
+### Launch Jefferson
+```
+screen
+docker-compose up
+```
+
+## Public Jefferson Nodes
+
+- dPay Primary API Node - [https://api.dpays.io/](https://api.dpayeurope.com/)
+- dPay Secondary API Node - [https://dpayapi.com/](https://dpayapi.com/)
+- dPay Europe API Node - [https://api.dpayeurope.com/](https://api.dpayeurope.com/)
+- dPay USA API Node - [https://api.dpayusa.com/](https://api.dpayusa.com/)
+- dPayID API Node - [https://api.dpayid.io/](https://api.dpayid.io/)
+- dSite's dPay API Node - [https://dapi.dsite.io/](https://dapi.dsite.io/)
+
 ## Namespaces
 A json-rpc method namespace is a json-rpc method prefix joined to the method name with a period, so a method in the "dpds" namespace begins with `dpds.` and will be forwarded to a dpds endpoint:
 ```

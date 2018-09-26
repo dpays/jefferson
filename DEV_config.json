@@ -11,7 +11,7 @@
       "urls": [
         [
           "dpayd",
-         "https://dpayd.dpays.io"
+         "https://greatchain.dpaynodes.com"
         ]
       ],
       "ttls": [
@@ -100,7 +100,7 @@
       "urls": [
         [
           "appbase",
-          "https://d.dpays.io"
+          "https://greatbase.dpaynodes.com"
         ]
       ],
       "ttls": [
