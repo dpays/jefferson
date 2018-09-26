@@ -71,7 +71,7 @@ docker-compose up
 - [@nomoreheroes](https://dsite.io/@nomoreheroes) [https://nomoreheroes.link](https://nomoreheroes.link) or ***[wss://nomoreheroes.link](wss://nomoreheroes.link)***
 - [@cointroller](https://dsite.io/@cointroller) [https://cointroller.dpays.io](https://cointroller.dpays.io) or ***[wss://cointroller.dpays.io](wss://cointroller.dpays.io)***
 - [@michaelx](https://dsite.io/@michaelx) [https://michaelx.link](https://michaelx.link) or ***[wss://michaelx.link](wss://michaelx.link)***
-- [@onceuponatime](https://dsite.io/@onceuponatime) [https://onceuponatime.dpays.io](https://onceuponatime.dpays.io) or ***[wss://onceuponatime.dpays.io](wss://onceuponatime.dpays.io)***
+- [@onceuponatime](https://dsite.io/@onceuponatime) [https://indominon.com](https://indominon.com) or ***[wss://indominon.com](wss://indominon.com)***
 - [@kusknee](https://dsite.io/@kusknee) [https://kusknee.dpayproducers.com](https://kusknee.dpayproducers.com) or ***[wss://kusknee.dpayproducers.com](wss://kusknee.dpayproducers.com)***
 - [@cryptokong](https://dsite.io/@cryptokong) [https://kong.dpayproducers.com](https://kong.dpayproducers.com) or ***[wss://kong.dpayproducers.com](wss://kong.dpayproducers.com)***
 - [@stan](https://dsite.io/@stan) [https://dpaystan.link](https://dpaystan.link) or ***[wss://dpaystan.link](wss://dpaystan.link)***
@@ -79,12 +79,12 @@ docker-compose up
 - [@bossdan](https://dsite.io/@bossdan) [https://bossdan.dpayproducers.com](https://bossdan.dpayproducers.com) or ***[wss://bossdan.dpayproducers.com](wss://bossdan.dpayproducers.com)***
 - [@samiam](https://dsite.io/@samiam) [https://samiam.link](https://samiam.link) or ***[wss://samiam.link](wss://samiam.link)***
 - [@mbex](https://dsite.io/@mbex) [https://mbex.link](https://mbex.link) or ***[wss://mbex.link](wss://mbex.link)***
-- [@nefertiti](https://dsite.io/@nefertiti) [https://nefertiti.link](https://nefertiti.link) or ***[wss://nefertiti.link](wss://nefertiti.link)***
+- [@nefertiti](https://dsite.io/@nefertiti) [https://nefertitibex.link](https://nefertitibex.link) or ***[wss://nefertitibex.link](wss://nefertitibex.link)***
 - [@bigg](https://dsite.io/@bigg) [https://bigg.dpayproducers.com](https://bigg.dpayproducers.com) or ***[wss://bigg.dpayproducers.com](wss://bigg.dpayproducers.com)***
 - [@chiraag](https://dsite.io/@chiraag) [https://chiraag.dpayproducers.com](https://chiraag.dpayproducers.com) or ***[wss://chiraag.dpayproducers.com](wss://chiraag.dpayproducers.com)***
 - [@morrison](https://dsite.io/@morrison) [https://morrison.dpayproducers.com](https://morrison.dpayproducers.com) or ***[wss://morrison.dpayproducers.com](wss://morrison.dpayproducers.com)***
 - [@quin](https://dsite.io/@quin) [https://quin.dpayproducers.com](https://quin.dpayproducers.com) or ***[wss://quin.dpayproducers.com](wss://quin.dpayproducers.com)***
-- [@freedomfirst](https://dsite.io/@freedomfirst) [https://freedomfirst.dpays.io](https://freedomfirst.dpays.io) or ***[wss://freedomfirst.dpays.io](wss://freedomfirst.dpays.io)***
+- [@freedomfirst](https://dsite.io/@freedomfirst) [https://freedomfirst.app](https://freedomfirst.app) or ***[wss://freedomfirst.app](wss://freedomfirst.app)***
 - [@tablecafe](https://dsite.io/@tablecafe) [https://tablecafe.dpayproducers.com](https://tablecafe.dpayproducers.com) or ***[wss://tablecafe.dpayproducers.com](wss://tablecafe.dpayproducers.com)***
 - [@nickeles](https://dsite.io/@nickeles) [https://jackson.dpays.io](https://jackson.dpays.io) or ***[wss://jackson.dpays.io](wss://jackson.dpays.io)***
 
